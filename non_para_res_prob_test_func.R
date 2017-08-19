@@ -118,15 +118,3 @@ nonParamResProb <- function(time_obs,
        quantile = c_a,
        Result = Result)
 }
-
-# Check on gastric cancer data
-setwd("~/Desktop/Speciale/R article")
-gasdata <- read.table("gasdata.txt")
-head(gasdata)
-
-# Run the function
-res <- nonParamResProb(time_obs = gasdata$time, 
-                       cens_ind = gasdata$status, 
-                       trt = gasdata$trt, 
-                       dataset = gasdata, tau = 2000, delta = 0.2, alpha = 0.05)
-res
